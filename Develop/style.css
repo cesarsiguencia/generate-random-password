@@ -125,6 +125,10 @@ button[disabled] {
     padding: 10px 15px;
   }
 
+  .card-header {
+    text-align: center;
+  }
+
   #password {
     font-size: 1rem;
   }
@@ -134,4 +138,5 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+  
 }
