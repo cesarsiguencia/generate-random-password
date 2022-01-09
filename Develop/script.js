@@ -21,42 +21,61 @@ var writePassword = function() {
   //var passwordText = document.querySelector("#password");
   // passwordText.value = password;
 
-  var generatePassword = function() {
-
-    var upperConfirm = confirm("Would you like to have uppercase letters in your code?");
-
-      if(upperConfirm){
-        console.log(uppercaseArray);
-      }
-      else {
-        writePassword();
-      }
-
-    var lowerConfirm = confirm("Would you like to have lowercase letters in your code?");
-      if(upperConfirm){
-        console.log(numberArray);
-      }
-      else {
-        writePassword();
-    }
-      
-
  // NOT DEFINED var password = generatePassword();
-  var passwordLength = prompt("What is the length of the password?")
-  console.log(passwordLength)
 
-    if (passwordLength < 8){
+  //USER WILL BE ASKED ABOUT LENGTH OF PASSWORD
+  var passwordLength = function(){
+    var characterLength = prompt("What is the length of the password?");
+    console.log(characterLength);
+
+    if (characterLength < 8){
       alert("Your password is too short. Please try again");
       passwordLength();
     }
-    else if (passwordLength > 128){
+    else if (characterLength > 128){
       alert("Your password is too long. Please try again");
       passwordLength();
     }
     else {
-      var specialcase = confirm("do you want special characters in your password?")
-      console.log(uppercase);
-    }
+    // USER WILL BE ASKED ABOUT UPPER AND LOWER CASE LETTER
+      var generatePassword = function() {
+        var upperConfirm = confirm("Would you like to have upper case letters in your password?");
+
+          if(upperConfirm){
+            console.log(uppercaseArray);
+          }
+          else {
+            generatePassword();
+          }
+
+        var lowerConfirm = confirm("Would you like to have lower case letters in your password?");
+          if(lowerConfirm){
+            console.log(lowercaseArray);
+          }
+          else {
+            generatePassword();
+          }
+
+
+        var numberConfirm = confirm("Would you like to have numbers in your password?");
+          if(numberConfirm){
+            console.log("Yes");
+          }
+          else {
+            generatePassword();
+          }
+
+        var specialCharacters = confirm("Do you want special characters in your password?")
+          if(specialCharacters){
+            console.log("Yes");
+          }
+          else {
+            generatePassword();
+        }
+      }
+      
+
+
   //   if (uppercase) {
   //     elementArray.concat(uppercaseArray)
   //   }
@@ -64,8 +83,7 @@ var writePassword = function() {
     // var lowercase = confirm("do you want lowercase in your password?")
     // console.log(lowercase)
 
-    // var specialCharacters = confirm("Do you want special characters in your password?")
-    // console.log(specialCharacters)
+    
 
     // var numbers = confirm("Do you want numbers in your password?")
     // console.log(numbers)
@@ -76,9 +94,11 @@ var writePassword = function() {
       //elementArray()
 
 
-
   } //generatePassword declaration ends
-  generatePassword();
+  generatePassword ();
+  
+  } //passwordLength 
+  passwordLength();
 } //writePassword function ends
  // make sure to call password function
 writePassword();
