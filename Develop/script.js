@@ -60,7 +60,7 @@ var writePassword = function() {
           else {
             alert("Your password will NOT contain lowercase letters")
 
-            if(upperConfirm === !true && lowerConfirm === !true){ 
+            if(upperConfirm === false && lowerConfirm === false){ 
               alert("Your password MUST contain alphabetical letters. Please try again");
               generatePassword();
             }else{
@@ -75,18 +75,20 @@ var writePassword = function() {
 
         var numberConfirm = confirm("Would you like to have numbers in your password?");
           if(numberConfirm){
-            console.log("Yes");
+            console.log("Yes numbers");
           }
           else {
-            generatePassword();
+            console.log("No numbers");
+            alert("Your password will not contain numbers.");
           }
 
         var specialCharacters = confirm("Do you want special characters in your password?")
           if(specialCharacters){
-            console.log("Yes");
+            console.log("Yes special characters");
           }
           else {
-            generatePassword();
+            console.log("No special characters");
+            alert("Your password will not contain special characters.");
         }
       }
       
