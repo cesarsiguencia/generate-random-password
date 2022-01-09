@@ -1,17 +1,44 @@
 // Assignment code here
 
-var uppercaseArray = ["A","B"]
-var lowercaseArray = ["a","b"]
-var specialcharacterArray = ["!","@"]
-var numberArray = [1,2,3,4,5,6,7,8,9,0]
+var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numberArray = [1,2,3,4,5,6,7,8,9,0];
+var specialcharacterArray = ["!","@","#","$","%","^","&","*","(",")","-","+"];
+
 
 // var testLetters = "TEST"
 // var testNumbers = "1234"
 // var testSpecial = "!@#$"
 
 
+function makeid(length) {
+  var result           = '';
+  var upperCase       = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var numberList = "0123456789";
+  var specialList = "!@#$%^&*()_+{}[]\|;:',./<>?";
+  var charactersLength = (upperCase + lowerCase + numberList + specialList).length;
+  for ( var i = 0; i < length; i++ ) {
+    result += (upperCase + lowerCase + numberList + specialList).charAt(Math.floor(Math.random() * 
+charactersLength));
+ }
+ return result;
+}
+
+console.log(makeid(8));
+
+
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate").onclick = function (writePassword) {
+
+  
+  
+
+
+
+
 
 // Write password to the #password input
 var writePassword = function() {
@@ -47,6 +74,7 @@ var writePassword = function() {
           if(upperConfirm){
             console.log(uppercaseArray);
             console.log("Your password will have uppercase letters")
+
           }
           else {
             alert("Your password will NOT contain uppercase letters")
