@@ -39,22 +39,38 @@ var writePassword = function() {
     else {
     // USER WILL BE ASKED ABOUT UPPER AND LOWER CASE LETTER
       var generatePassword = function() {
+
+        
         var upperConfirm = confirm("Would you like to have upper case letters in your password?");
 
+      
           if(upperConfirm){
             console.log(uppercaseArray);
+            console.log("Your password will have uppercase letters")
           }
           else {
-            generatePassword();
+            alert("Your password will NOT contain uppercase letters")
           }
 
-        var lowerConfirm = confirm("Would you like to have lower case letters in your password?");
+        var lowerConfirm = confirm("Would you like to have lowercase letters in your password?");
           if(lowerConfirm){
             console.log(lowercaseArray);
+            console.log("Your password will have lowercase letters")
           }
           else {
-            generatePassword();
+            alert("Your password will NOT contain lowercase letters")
+
+            if(upperConfirm === !true && lowerConfirm === !true){ 
+              alert("Your password MUST contain alphabetical letters. Please try again");
+              generatePassword();
+            }else{
+              console.log("Password has met criteria.");
+            }
           }
+        
+         
+
+          
 
 
         var numberConfirm = confirm("Would you like to have numbers in your password?");
