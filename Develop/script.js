@@ -8,6 +8,10 @@ var lowercaseArray = "abcdefghijklmnopqrstuvwxyz";
 var numbersArray= "0123456789";
 var specialcharactersArray= "!@#$%^&*()_+{}[]\|;:',./<>?";
 
+var upperConfirm = true;
+var lowerConfirm = true;
+var numberConfirm = true;
+var specialConfirm = true;
 
 // var testLetters = "TEST"
 // var testNumbers = "1234"
@@ -35,11 +39,11 @@ var writePassword = function() {
   
     
 
-  // NOT DEFINED var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-  // passwordText.value = password;
+                                  // NOT DEFINED var password = generatePassword();
+                                  //var passwordText = document.querySelector("#password");
+                                  // passwordText.value = password;
 
- // NOT DEFINED var password = generatePassword();
+                                // NOT DEFINED var password = generatePassword();
 
   //USER WILL BE ASKED ABOUT LENGTH OF PASSWORD
   var passwordLength = function(){    //  ONE
@@ -99,52 +103,59 @@ var writePassword = function() {
             alert("Your password will not contain numbers.");
           }
 
-        var specialCharacters = confirm("Do you want special characters in your password?")
-          if(specialCharacters){
+        var specialConfirm = confirm("Do you want special characters in your password?")
+          if(specialConfirm){
             console.log("Yes special characters");
           }
           else {
             console.log("No special characters");
             alert("Your password will not contain special characters.");
         }
-      } // THREE GENERATE PASSWORD ENDS
-      
-      generatePassword ();
-
-  //   if (uppercase) {
-  //     elementArray.concat(uppercaseArray)
-  //   }
-
-    // var lowercase = confirm("do you want lowercase in your password?")
-    // console.log(lowercase)
-
     
+                                    // if (uppercase) {
+                                    //   elementArray.concat(uppercaseArray)
+                                    // }
 
-    // var numbers = confirm("Do you want numbers in your password?")
-    // console.log(numbers)
+                                    // var lowercase = confirm("do you want lowercase in your password?")
+                                    // console.log(lowercase)
 
-    //for (i = 0; i < passwordLength, i++){
-      //1. math.floor(math.random) using length of element array to determine upper and lower bound.
-      //2. another for loop, by using math.random, we are going to say get the value of element at the  randomly generated index
-      //elementArray()
+                                    
+
+                                    // var numbers = confirm("Do you want numbers in your password?")
+                                    // console.log(numbers)
+
+                                    // for (i = 0; i < passwordLength, i++){
+                                    //   1. math.floor(math.random) using length of element array to determine upper and lower bound.
+                                    //   2. another for loop, by using math.random, we are going to say get the value of element at the  randomly generated index
+                                    //   elementArray()
 
 
-  } //ELSE OF 2ND FUNCTION ENDS
+  //ELSE OF 2ND FUNCTION ENDS
   
-  function makeid(length) {
+  function passwordConditions(length) {
 
     for ( var i = 0; i < length; i++ ) {
+
+  
       var finalPasswordLength = (uppercaseArray + lowercaseArray + numbersArray + specialcharactersArray).length;
       result += (uppercaseArray + lowercaseArray + numbersArray + specialcharactersArray).charAt(Math.floor(Math.random() * finalPasswordLength));
-   }
+      }
+    
+   
    return result;
-}
+  }
 
-console.log(makeid(characterLength));
+
+console.log(passwordConditions(characterLength));
 document.querySelector("#password").innerHTML = "";
-document.querySelector("#password").innerHTML = makeid(result);
+document.querySelector("#password").innerHTML = passwordConditions(result);
 
-makeid(length)
+passwordConditions(length)
+
+} // THREE GENERATE PASSWORD ENDS
+      
+generatePassword ();
+}
   
 } //passwordLength FUNCTION ENDS
 
@@ -172,10 +183,3 @@ writePassword();
 
 
 
-  
-// Here is what I need to do
-// Have a first page that opens password generatorr
-// when the prompts of the password is displayed
-// then the user gets to select what they would like to include in passwords
-// when asked for the length of the password, it should be between 8-128 specialCharacteres
-// when i tell the system what characters I wantt it should tell me I need atcharacter type
