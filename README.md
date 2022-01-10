@@ -12,7 +12,7 @@ Your password can be from 8 to 128 characters long.
 
 
 ### Website Link
-https://cesarsiguencia.github.io/password-generator/
+https://cesarsiguencia.github.io/your-personal-password-generator/
 
 ### Screenshot
 ![Screenshot 1](screenshot/password-generator-screenshot.jpeg)
