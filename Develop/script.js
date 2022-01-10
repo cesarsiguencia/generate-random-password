@@ -1,9 +1,12 @@
 // Assignment code here
 
-var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numberArray = [1,2,3,4,5,6,7,8,9,0];
-var specialcharacterArray = ["!","@","#","$","%","^","&","*","(",")","-","+"];
+
+
+var result           = '';
+var uppercaseArray= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseArray = "abcdefghijklmnopqrstuvwxyz";
+var numbersArray= "0123456789";
+var specialcharactersArray= "!@#$%^&*()_+{}[]\|;:',./<>?";
 
 
 // var testLetters = "TEST"
@@ -11,31 +14,12 @@ var specialcharacterArray = ["!","@","#","$","%","^","&","*","(",")","-","+"];
 // var testSpecial = "!@#$"
 
 
-function makeid(length) {
-  var result           = '';
-  var upperCase       = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var numberList = "0123456789";
-  var specialList = "!@#$%^&*()_+{}[]\|;:',./<>?";
-  var charactersLength = (upperCase + lowerCase + numberList + specialList).length;
-  for ( var i = 0; i < length; i++ ) {
-    result += (upperCase + lowerCase + numberList + specialList).charAt(Math.floor(Math.random() * 
-charactersLength));
- }
- return result;
-}
-
-console.log(makeid(8));
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate").onclick = function (writePassword) {
 
-  
-  
 
+  
 
 
 
@@ -44,6 +28,13 @@ var generateBtn = document.querySelector("#generate").onclick = function (writeP
 var writePassword = function() {
   alert("Welcome to Password Generator. Press OK to Start")
 
+
+
+
+
+  
+    
+
   // NOT DEFINED var password = generatePassword();
   //var passwordText = document.querySelector("#password");
   // passwordText.value = password;
@@ -51,9 +42,10 @@ var writePassword = function() {
  // NOT DEFINED var password = generatePassword();
 
   //USER WILL BE ASKED ABOUT LENGTH OF PASSWORD
-  var passwordLength = function(){
+  var passwordLength = function(){    //  ONE
     var characterLength = prompt("What is the length of the password?");
     console.log(characterLength);
+
 
     if (characterLength < 8){
       alert("Your password is too short. Please try again");
@@ -63,9 +55,9 @@ var writePassword = function() {
       alert("Your password is too long. Please try again");
       passwordLength();
     }
-    else {
+    else {    //TWO
     // USER WILL BE ASKED ABOUT UPPER AND LOWER CASE LETTER
-      var generatePassword = function() {
+      var generatePassword = function() {    //THREE
 
         
         var upperConfirm = confirm("Would you like to have upper case letters in your password?");
@@ -74,7 +66,6 @@ var writePassword = function() {
           if(upperConfirm){
             console.log(uppercaseArray);
             console.log("Your password will have uppercase letters")
-
           }
           else {
             alert("Your password will NOT contain uppercase letters")
@@ -85,7 +76,7 @@ var writePassword = function() {
             console.log(lowercaseArray);
             console.log("Your password will have lowercase letters")
           }
-          else {
+          else {   //FOUR
             alert("Your password will NOT contain lowercase letters")
 
             if(upperConfirm === false && lowerConfirm === false){ 
@@ -94,13 +85,11 @@ var writePassword = function() {
             }else{
               console.log("Password has met criteria.");
             }
-          }
+          }  ///FOUR FUNCTION ENDS
         
-         
+        //STILL UNDER GENERATE PASSWORD FUNCTION 
 
-          
-
-
+  
         var numberConfirm = confirm("Would you like to have numbers in your password?");
           if(numberConfirm){
             console.log("Yes numbers");
@@ -118,9 +107,9 @@ var writePassword = function() {
             console.log("No special characters");
             alert("Your password will not contain special characters.");
         }
-      }
+      } // THREE GENERATE PASSWORD ENDS
       
-
+      generatePassword ();
 
   //   if (uppercase) {
   //     elementArray.concat(uppercaseArray)
@@ -140,13 +129,39 @@ var writePassword = function() {
       //elementArray()
 
 
-  } //generatePassword declaration ends
-  generatePassword ();
+  } //ELSE OF 2ND FUNCTION ENDS
   
-  } //passwordLength 
-  passwordLength();
+  function makeid(length) {
+
+    for ( var i = 0; i < length; i++ ) {
+      var finalPasswordLength = (uppercaseArray + lowercaseArray + numbersArray + specialcharactersArray).length;
+      result += (uppercaseArray + lowercaseArray + numbersArray + specialcharactersArray).charAt(Math.floor(Math.random() * finalPasswordLength));
+   }
+   return result;
+}
+
+console.log(makeid(characterLength));
+document.querySelector("#password").innerHTML = "";
+document.querySelector("#password").innerHTML = makeid(result);
+
+makeid(length)
+  
+} //passwordLength FUNCTION ENDS
+
+passwordLength();
+
+
+
+
+
+
+
 } //writePassword function ends
  // make sure to call password function
+
+
+ 
+
 writePassword();
 
 // DONT  NEEED IT???   generateBtn.addEventListener("click", writePassword);
