@@ -1,0 +1,171 @@
+
+
+
+function someOtherFunction() {
+    hello()
+}
+
+
+someOtherFunction()
+
+function hello() {
+    console.log('hi!')
+}
+
+
+
+
+
+
+
+function giveMeFive() {
+    return 5
+};
+
+
+
+var result = giveMeFive();
+
+console.log(result) // 5
+
+
+
+
+
+
+generateBtn.onmouseenter = function(event) {
+    console.log('the mouse enter event', event)
+var currentButtonColor = event.target.style.backgroundColor;
+
+if (currentButtonColor === 'red') {
+    event.target.style.backgroundColor = 'green'
+} else if (currentButtonColor === 'green') {
+  event.target.style.backgroundColor = 'red'
+} else {
+  event.target.style.backgroundColor = 'red';
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function generatePasswordConfig() {
+
+  var upperConfirm = confirm("Would you like to have upper case letters in your password?");
+
+
+  if (upperConfirm) {
+    console.log(uppercaseArray);
+    console.log("Your password will have uppercase letters")
+  }
+  else {
+    alert("Your password will NOT contain uppercase letters")
+  }
+
+  var lowerConfirm = confirm("Would you like to have lowercase letters in your password?");
+  if (lowerConfirm) {
+    console.log(lowercaseArray);
+    console.log("Your password will have lowercase letters")
+  }
+  else {   //FOUR
+    alert("Your password will NOT contain lowercase letters")
+
+    if (upperConfirm === false && lowerConfirm === false) {
+      alert("Your password MUST contain alphabetical letters. Please try again");
+      generatePassword();
+    } else {
+      console.log("Password has met criteria.");
+    }
+  }  ///FOUR FUNCTION ENDS
+
+  //STILL UNDER GENERATE PASSWORD FUNCTION 
+
+
+  var numberConfirm = confirm("Would you like to have numbers in your password?");
+  if (numberConfirm) {
+    console.log("Yes numbers");
+  }
+  else {
+    console.log("No numbers");
+    alert("Your password will not contain numbers.");
+  }
+
+  var specialConfirm = confirm("Do you want special characters in your password?")
+  if (specialConfirm) {
+    console.log("Yes special characters");
+  }
+  else {
+    console.log("No special characters");
+    alert("Your password will not contain special characters.");
+  }
+
+
+
+  return {
+      numberConfirm,
+      specialConfirm,
+      lowerConfirm,
+      upperConfirm
+  }
+
+
+}
+
+
+
+
+
+
+
+
+var passwordConfig = generatePasswordConfig();
+
+
+if (passwordConfig.numberConfirm) {
+
+}
+
+//FUNTION LAYOUT WITH ARGUEMENT
+
+// generateBtn.onmouseenter = function(event) {
+//     console.log('the mouse enter event', event)
+// var currentButtonColor = event.target.style.backgroundColor;
+
+// if (currentButtonColor === 'red') {
+//     event.target.style.backgroundColor = 'green'
+// } else if (currentButtonColor === 'green') {
+//   event.target.style.backgroundColor = 'red'
+// } else {
+//   event.target.style.backgroundColor = 'red';
+}
+
+}
