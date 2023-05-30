@@ -1,18 +1,17 @@
 # Welcome to Cesar's Password Generator 
 
-Need a password? Feel free to use my password generator fully powered by Javascript! And you can fully customize it to your appeal.
+Need a password? Feel free to use my password generator fully powered by vanilla Javascript! And you can fully customize it to your appeal.
 
-Choose if you'd like upper and lower case letters.
+Choose if you'd like the following for your random password:
 
-Choose numbers.
+- Upper and lower case letters.
+- Numbers
+- Special characters
 
-Choose special characters.
-
-Your password can be from 8 to 128 characters long.
-
+You can also decide the length of the password, which can be anywhere from 8 to 128 characters long. 
 
 ### Website Link
-https://cesarsiguencia.github.io/your-personal-password-generator/
+https://cesarsiguencia.github.io/generate-random-password/
 
 ### Screenshot
 ![Screenshot 1](screenshot/password-generator-screenshot.jpeg)

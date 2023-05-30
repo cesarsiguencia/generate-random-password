@@ -75,6 +75,7 @@ var uppercaseConfirm = function () {
   else {
     alert("Your password will NOT contain uppercase letters");
   }
+  // return upperConfirm
 }
 
 
@@ -144,9 +145,14 @@ var generatePassword = function() {
   if (specialConfirm){
     confirmedCharacters = confirmedCharacters.concat(specialcharactersArray);
   }
+
   
   for (var i = 0; i < characterLength; i++) {
     //adding loop to grab random character from global array as many times as the characterLength
+    //first: mathRandom is generating a random number between 0 to 1. 
+    //second: this value is the multiplied by the number of characters in total we can choose to make our password. If we selected all options, then there should be 88 possible characters to choose from.
+    //third: use Math.floor to round the value down to the nearest whole number. While we may have 88 characters, 88 it won't work as an index in our array, so we need to push down one number to 87. We will have our index after this
+    //four: place our random index number for our confirmed characters array
     var randomValue = confirmedCharacters[Math.floor(Math.random() * confirmedCharacters.length)];
     textArea.innerHTML += randomValue;
   }
